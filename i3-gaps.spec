@@ -4,7 +4,7 @@
 %global upstream_version 4.18
 
 Name:           i3-gaps
-Version:        4.18.2
+Version:        4.18.3
 Release:        1
 Summary:        A fork of i3wm tiling window manager with more features, including gaps
 License:        BSD
