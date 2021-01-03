@@ -4,14 +4,14 @@
 %global upstream_version 4.18
 
 Name:           i3-gaps
-Version:        4.18.3
+Version:        4.19
 Release:        1
 Summary:        A fork of i3wm tiling window manager with more features, including gaps
 License:        BSD
 Group:          System/X11
 URL:            https://github.com/Airblader/i3
 
-Source0: 	https://github.com/Airblader/i3/releases/download/%{version}/%{real_name}-%{version}.tar.bz2
+Source0: 	https://github.com/Airblader/i3/releases/download/%{version}/%{real_name}-%{version}.tar.xz
 Source1: 	%{real_name}-logo.svg
 
 Patch1:		fix-ev.patch
