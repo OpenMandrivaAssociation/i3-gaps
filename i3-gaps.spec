@@ -25,6 +25,7 @@ BuildRequires: pkgconfig(xcb-util)
 BuildRequires: x11-proto-devel
 BuildRequires: xcb-util-wm-devel
 BuildRequires: pkgconfig(libev)
+BuildRequires: meson
 BuildRequires: bison
 BuildRequires: doxygen
 BuildRequires: flex
@@ -44,6 +45,7 @@ BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: pkgconfig(xkbcommon-x11)
 BuildRequires: pkgconfig(yajl)
 BuildRequires: xmlto
+BuildRequires: perl-ExtUtils-MakeMaker
 
 Requires:       rxvt-unicode
 Requires:       x11-apps
@@ -72,15 +74,12 @@ Asciidoc and doxygen documentations for i3-gaps.
 %autopatch -p1
 
 %build
-%configure
+%meson
 
-%make_build -C *-openmandriva-linux-gnu*
-
-doxygen pseudo-doc.doxygen
-mv pseudo-doc/html pseudo-doc/doxygen
+%meson_build
 
 %install
-%make_install -C *-openmandriva-linux-gnu*
+%meson_install
 
 mkdir -p %{buildroot}/%{_mandir}/man1/
 install -Dpm0644 man/*.1 %{buildroot}/%{_mandir}/man1/
