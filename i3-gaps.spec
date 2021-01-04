@@ -74,7 +74,7 @@ Asciidoc and doxygen documentations for i3-gaps.
 %autopatch -p1
 
 %build
-%meson
+%meson -Ddocs
 
 %meson_build
 
