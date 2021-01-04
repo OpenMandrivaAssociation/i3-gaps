@@ -50,23 +50,23 @@ BuildRequires: perl-ExtUtils-MakeMaker
 Requires:       rxvt-unicode
 Requires:       x11-apps
 Recommends:     dmenu
-Recommends:     i3-gaps-doc
+#Recommends:     i3-gaps-doc
 Recommends:	i3status
 Conflicts:	i3-wm
 
 %description
 A fork of i3wm tiling window manager with more features, including gaps
 
-%package doc
-Summary:        i3-gaps window manager documentation
-Group:          System/X11
-BuildRequires:  doxygen
-BuildArch:      noarch
-Requires:       %{name} = %{version}-%{release}
-Conflicts:	i3-doc
-
-%description doc
-Asciidoc and doxygen documentations for i3-gaps.
+#package doc
+#Summary:        i3-gaps window manager documentation
+#Group:          System/X11
+#BuildRequires:  doxygen
+#BuildArch:      noarch
+#Requires:       %{name} = %{version}-%{release}
+#Conflicts:	i3-doc
+#
+#description doc
+#Asciidoc and doxygen documentations for i3-gaps.
 
 
 %prep
@@ -74,7 +74,7 @@ Asciidoc and doxygen documentations for i3-gaps.
 %autopatch -p1
 
 %build
-%meson -Ddocs
+%meson
 
 %meson_build
 
@@ -109,9 +109,9 @@ fi
 %exclude %{_docdir}/i3/*
 
 
-%files doc
-%defattr(-,root,root,-)
-%doc docs/*.{html,png} pseudo-doc/doxygen/
+#files doc
+#defattr(-,root,root,-)
+#doc docs/*.{html,png} pseudo-doc/doxygen/
 
 
 %changelog
